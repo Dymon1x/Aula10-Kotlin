@@ -1,9 +1,9 @@
 package br.com.digitalhouse.aula10
 
 //Parte B
-class Curso(var nome: String, var codCurso: Int, var quantMaxAluno: Int) {
-    var pTitular = ProfTitulares()
-    var pAdjunto = ProfAdjuntos()
+class Curso(var nome: String, var codCurso: Int, var qtdeMaxAluno: Int) {
+    var profTitular = ProfTitulares()
+    var profAdjunto = ProfAdjuntos()
     var listaAlunos = mutableListOf<Aluno>()
 
     constructor(codCurso: Int) {
