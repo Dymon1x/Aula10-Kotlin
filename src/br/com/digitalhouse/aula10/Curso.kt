@@ -1,16 +1,30 @@
 package br.com.digitalhouse.aula10
 
 //Parte B
-class Curso(var nome: String, var codCurso: Int, var qtdeMaxAluno: Int) {
-    var profTitular = ProfTitulares()
-    var profAdjunto = ProfAdjuntos()
-    var listaAlunos = mutableListOf<Aluno>()
+class Curso(
+    val nome: String,
+    val codCurso: Int,
+    val profTitulares: ProfTitulares? = null,
+    val profAdjuntos: ProfAdjuntos? = null,
+    var qtdeMaxAluno: Int,
+    var alunosMatriculados: MutableList<Aluno>
+) {
+    override fun equals(c: Any?): Boolean {
+        c as Curso
+        return this.codCurso == c.codCurso
+    }
 
-    constructor(codCurso: Int) {
-        if (this.codCurso == codCurso) {
-            println("O codigo do curso ${this.codCurso} é igual ao codigo do curso $codCurso")
+    fun adicionarUmAluno(aluno: Aluno): Boolean {
+        return if(alunosMatriculados.size < qtdeMaxAluno) {
+            print("Aluno matriculado com sucesso")
+            this.alunosMatriculados.add(aluno)
         } else {
-            println("Os codigos de curso são diferentes")
+            println("Aluno não foi matriculado")
+            false
         }
+    }
+
+    fun excluirAluno(aluno: Aluno) {
+        alunosMatriculados.remove(aluno)
     }
 }
