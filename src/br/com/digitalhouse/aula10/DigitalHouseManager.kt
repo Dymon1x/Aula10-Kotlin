@@ -44,7 +44,7 @@ class DigitalHouseManager() {
             //println("Professor: ${p.nome} - cód:${p.codProf}")
             if (p.codProf == codProf){
                 listaProf.remove(p)
-                println("Professor removido do sistema - cód: $p.")
+                println("Professor removido do sistema - cód: ${p.codProf}")
 
             }
         }
