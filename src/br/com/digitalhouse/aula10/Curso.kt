@@ -1,6 +1,5 @@
 package br.com.digitalhouse.aula10
 
-//Parte B
 class Curso(
     val nome: String,
     val codCurso: Int,

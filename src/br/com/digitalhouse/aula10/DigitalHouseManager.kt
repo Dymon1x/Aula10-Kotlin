@@ -17,7 +17,6 @@ class DigitalHouseManager() {
 
     fun excluirCurso(codCurso: Int) {
         for (c in cursos) {
-            //println("Cursos - ${c.nome} e cód - ${c.codCurso}")
             if (c.codCurso == codCurso) {
                 cursos.remove(c)
                 println("Curso Removido - cód: ${c.codCurso}")
@@ -41,8 +40,7 @@ class DigitalHouseManager() {
 
     fun excluirProf(codProf: Int) {
         for (p in listaProf) {
-            //println("Professor: ${p.nome} - cód:${p.codProf}")
-            if (p.codProf == codProf){
+            if (p.codProf == codProf) {
                 listaProf.remove(p)
                 println("Professor removido do sistema - cód: ${p.codProf}")
 
@@ -67,9 +65,7 @@ class DigitalHouseManager() {
                         var matricular = Matricula(a, c, Date())
                         matricula.add(matricular)
                         println("Matricula Realizada com Sucesso no curso: ${c.nome}")
-                    } /*else {
-                        println("Matricula Incompleta no curso: ${c.nome}")
-                    }*/
+                    }
                 }
             }
         }
@@ -83,7 +79,8 @@ class DigitalHouseManager() {
                         p as ProfTitulares
                         c.profTitulares == p
                         println("Professor Titular foi Alocado")
-                    } else if (p.codProf == codProfAdjuntos) {
+                    }
+                    if (p.codProf == codProfAdjuntos) {
                         for (c in cursos) {
                             if (c.codCurso == codCurso) {
                                 p as ProfAdjuntos
@@ -96,7 +93,5 @@ class DigitalHouseManager() {
             }
         }
     }
-
-
 }
 
